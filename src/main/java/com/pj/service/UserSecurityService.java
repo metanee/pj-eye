@@ -17,11 +17,11 @@ public class UserSecurityService implements UserDetailsService {
 	private static final Logger LOG = LoggerFactory.getLogger(UserSecurityService.class);
 
 	@Autowired
-	private UserRepository userReposityry;
+	private UserRepository userRepository;
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
-		User user = userReposityry.findByUsername(username);
+		User user = userRepository.findByUsername(username);
 		if(null == user) {
 			LOG.warn("Username {} not found", username);
 			throw new UsernameNotFoundException("Username"+username+"not found");

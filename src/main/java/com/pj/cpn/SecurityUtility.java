@@ -14,12 +14,12 @@ public class SecurityUtility {
 	
 	@Bean
 	public static BCryptPasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder (12, new SecureRandom(SALT.getBytes()));
+		return new BCryptPasswordEncoder(12, new SecureRandom(SALT.getBytes()));
 	}
 	
 	@Bean
 	public static String randomPassword() {
-		String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
 		StringBuilder salt = new StringBuilder();
 		Random rnd = new Random();
 		

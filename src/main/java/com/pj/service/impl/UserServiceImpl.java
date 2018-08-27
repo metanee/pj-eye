@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private RoleRepository roleRepository;
 	
-	@Override
+	
 	@Transactional //มีปัญหา
 	public User createUser(User user, Set<UserRole> userRoles) {
 		User localUser = userRepository.findByUsername(user.getUsername());

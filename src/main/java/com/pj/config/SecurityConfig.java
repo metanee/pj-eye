@@ -29,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		return SecurityUtility.passwordEncoder();
 	}
 	
-	private static final String[] PUBLIC_MATCHES = {
+	private static final String[] PUBLIC_MATCHERS = {
 			"/css/**",
 			"/js/**",
 			"/image/**",
@@ -40,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception{
 		http.csrf().disable().cors().disable().httpBasic().and().authorizeRequests()
-		.antMatchers(PUBLIC_MATCHES).permitAll().anyRequest().authenticated();
+		.antMatchers(PUBLIC_MATCHERS).permitAll().anyRequest().authenticated();
 	}
 	
 	@Autowired
@@ -49,7 +49,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 	
 	@Bean
-	public HttpSessionStrategy httpSesstionStrategy() {
+	public HttpSessionStrategy httpSessionStrategy() {
 		return new HeaderHttpSessionStrategy();
 	}
 }

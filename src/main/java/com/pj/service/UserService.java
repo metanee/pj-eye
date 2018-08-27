@@ -7,5 +7,5 @@ import com.pj.model.UserRole;
 
 public interface UserService {
 
-	public User createUser(User user, Set<UserRole> userRoles);
+	 User createUser(User user, Set<UserRole> userRoles);
 }

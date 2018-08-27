@@ -52,7 +52,6 @@
 			<groupId>org.springframework.session</groupId>
 			<artifactId>spring-session-data-redis</artifactId>
 		</dependency>
-
 		<dependency>
    			 <groupId>biz.paluch.redis</groupId>
     			<artifactId>lettuce</artifactId>
